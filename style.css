@@ -34,6 +34,10 @@ button {
   width: 100%;
 }
 
+button:hover {
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.25);
+}
+
 #container {
   display: flex;
   padding: 20px;
@@ -51,4 +55,11 @@ aside {
   border-right: 1px solid #111;
   padding: 10px 20px;
   width: 250px;
+}
+
+.person {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
