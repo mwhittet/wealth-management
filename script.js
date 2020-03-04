@@ -41,6 +41,16 @@ const showMillionaires = () => {
   updateDOM();
 };
 
+const calculateWealth = () => {
+  const wealth = data.reduce((acc, user) => (acc += user.money), 0);
+  const wealthEl = document.createElement('div');
+
+  wealthEl.innerHTML = `<h3>Total wealth: <strong>${formatMoney(
+    wealth
+  )}</strong></h3>`;
+  main.appendChild(wealthEl);
+};
+
 // Borrowed from: https://stackoverflow.com/questions/149055/how-to-format-numbers-as-currency-string
 const formatMoney = number =>
   '£' + number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
@@ -69,3 +79,4 @@ addUserBtn.addEventListener('click', getRandomUser);
 doubleBtn.addEventListener('click', doubleMoney);
 sortBtn.addEventListener('click', sortByRichest);
 showMillionairesBtn.addEventListener('click', showMillionaires);
+calculateWealthBtn.addEventListener('click', calculateWealth);

@@ -1,6 +1,6 @@
 ## Wealth management
 
-Project using high order array methods and DOM manipulation
+Quick project using high order array methods and DOM manipulation
 
 ## Project Specifications
 
