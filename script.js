@@ -21,6 +21,20 @@ const getRandomUser = async () => {
   addData(newUser);
 };
 
+const doubleMoney = () => {
+  data = data.map(user => {
+    return { ...user, money: user.money * 2 };
+  });
+
+  updateDOM();
+};
+
+const sortByRichest = () => {
+  data.sort((a, b) => b.money - a.money);
+
+  updateDOM();
+};
+
 // Borrowed from: https://stackoverflow.com/questions/149055/how-to-format-numbers-as-currency-string
 const formatMoney = number =>
   '£' + number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
@@ -46,3 +60,5 @@ const updateDOM = (providedData = data) => {
 };
 
 addUserBtn.addEventListener('click', getRandomUser);
+doubleBtn.addEventListener('click', doubleMoney);
+sortBtn.addEventListener('click', sortByRichest);
